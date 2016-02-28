@@ -1,8 +1,5 @@
 package ru.stqa.pft.sandbox;
 
-/**
- * Created by BloodyJes on 22.02.2016.
- */
 public class Square {
 
     public double l;
