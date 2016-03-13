@@ -45,9 +45,13 @@ public class GroupCreationTests {
         wd.findElement(By.name("group_footer")).clear();
         wd.findElement(By.name("group_footer")).sendKeys("Test3");
         wd.findElement(By.name("submit")).click();
+        returnToGroupPage();
+    }
+
+    private void returnToGroupPage() {
         wd.findElement(By.linkText("group page")).click();
     }
-    
+
     @AfterMethod
     public void tearDown() {
         wd.quit();
