@@ -19,7 +19,7 @@ public class ApplicationManager {
     private WebDriver wd;
 
     private String browser;
-    private RegistrationHelper registratoinHelper;
+    private RegistrationHelper registrationHelper;
     private FtpHelper ftp;
     private MailHelper mailHelper;
 
@@ -51,10 +51,10 @@ public class ApplicationManager {
     }
 
     public RegistrationHelper registration() {
-        if (registratoinHelper == null) {
-            registratoinHelper = new RegistrationHelper(this);
+        if (registrationHelper == null) {
+            registrationHelper = new RegistrationHelper(this);
         }
-        return registratoinHelper;
+        return registrationHelper;
     }
 
     public FtpHelper ftp() {
