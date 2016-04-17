@@ -17,11 +17,8 @@ public class ResetPassHelper extends HelperBase{
         click(By.xpath("//input[@value='Login']"));
     }
 
-    public void goToUsersManagePage() {
+    public void chooseUser(String login) {
         wd.get(app.getProperty("web.baseUrl") + "/manage_user_page.php");
-    }
-
-    public void editUser(String login) {
         click(By.xpath("//a[text()='"+ login +"']"));
     }
 

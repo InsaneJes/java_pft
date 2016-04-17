@@ -40,8 +40,7 @@ public class ResetPasswordTest extends TestBase{
             System.out.println("VendorError: " + ex.getErrorCode());
         }
         app.resetPassHelper().login("administrator", "root");   //логинимся под админом
-        app.resetPassHelper().goToUsersManagePage();    //идём на страницу управления юзерами
-        app.resetPassHelper().editUser(currLogin);      //идём на страницу изменения профиля конкретного юзера
+        app.resetPassHelper().chooseUser(currLogin);    //идём на страницу изменения профиля конкретного юзера
         String email = app.resetPassHelper().getEmailFromProfilePage();     //получаем его мыло
         app.resetPassHelper().resetPassword();      //жмём сменить пароль
 
@@ -49,8 +48,8 @@ public class ResetPasswordTest extends TestBase{
         String confirmationLink = findConfirmationLink(mailMessages, email);
 
         app.resetPassHelper().gotoConfirmationLink(confirmationLink);       //идём по ссылке
-
         String newPassword = "newPassword" + System.currentTimeMillis();        //задаём новый пароль
+        System.out.println("Новый пароль пользователя " + currLogin + ": " + newPassword);  //на всякий случай выводим новый пароль в консоль
         app.resetPassHelper().editPassword(newPassword);        //устанавливаем ему этот пароль
 
         HttpSession session = app.newSession();     //коннектимся по http
