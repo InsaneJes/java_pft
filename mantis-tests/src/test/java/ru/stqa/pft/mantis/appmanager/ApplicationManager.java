@@ -23,6 +23,7 @@ public class ApplicationManager {
     private FtpHelper ftp;
     private MailHelper mailHelper;
     private ResetPassHelper resetPassHelper;
+    private SoapHelper soapHelper;
 
 
     public ApplicationManager(String browser) {
@@ -90,5 +91,12 @@ public class ApplicationManager {
     public ResetPassHelper resetPassHelper() {
         resetPassHelper = new ResetPassHelper(this);
         return resetPassHelper;
+    }
+
+    public SoapHelper soap() {
+        if (soapHelper == null) {
+            soapHelper = new SoapHelper(this);
+        }
+        return soapHelper;
     }
 }
